@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "Find Help!",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -40,6 +40,7 @@
     "webpack-dev-server": "^3.1.0"
   },
   "dependencies": {
+    "es6-promise": "^4.2.5",
     "bootstrap": "^4.2.1",
     "chosen": "0.0.2",
     "jquery": "^3.3.1",
