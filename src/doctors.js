@@ -22,4 +22,4 @@ class Doctors {
 
 
 }
-exports { Doctors }
+export { Doctors };
