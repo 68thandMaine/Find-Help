@@ -12,10 +12,11 @@
     "jasmine": true
     },
     "rules": {
-      "semi": 1,
-      "indent": ["warn", 2],
-      "no-console": "warn",
-      "no-debugger": "warn",
-      "no-undeclared-var": 1
+        "semi": 1,
+        "indent": ["warn", 2],
+        "no-console": "warn",
+        "no-debugger": "warn",
+        "no-unused-vars": "warn",
+        "no-undef-vars": 1
       }
 }
