@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Open+Sans|Oswald|Raleway|Roboto');
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Major Mono Display', monospace; */
+
+html {
+  background-color: #141214;
+}
+
+p {
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  font-stretch: extra-expanded;
+  font-weight: lighter;
+}
+
+h1 {
+   color: rgb(260, 245, 243);
+   font-family: 'Major Mono Display', monospace;
+   font-size: 40;
+   font-stretch: expanded;
+   font-style: italic;
+   text-align: center;
+ }
+
+#customBackground {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 100;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+ #title {
+   padding-top: 15px;
+ }
+
+
+.leftPane {
+
+}
