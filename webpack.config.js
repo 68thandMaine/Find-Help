@@ -1,8 +1,9 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+
 
 //The code above is required if you install plugins
 
@@ -16,16 +17,15 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   },
-
   plugins: [
     new Dotenv(),
-    new UglifyJsPlugin({sourceMap: true}),
+    new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: "Find Help!",
+      title: 'FindHelp',
       template: './src/index.html',
       inject: 'body'
-    }),
+    })
   ],
   module: {
     rules: [

@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import { Doctors } from './doctors.js';
 
 export function buildDoctorCards(body) {
   let doctorList = "";
@@ -8,3 +7,5 @@ export function buildDoctorCards(body) {
   }
   $('#output').append(doctorList);
 }
+
+// ------/buildDoctorCards--------//
