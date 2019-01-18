@@ -18,14 +18,14 @@ module.exports = {
   },
 
   plugins: [
+    new Dotenv(),
     new UglifyJsPlugin({sourceMap: true}),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: "Triangle Tracker",
+      title: "Find Help!",
       template: './src/index.html',
       inject: 'body'
     }),
-    new Dotenv()
   ],
   module: {
     rules: [
