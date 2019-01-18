@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
   <link rel="stylesheet" href="./styles.css">
-    <title></title>
-  </head>
-  <body>
-    <div id="customBackground">
+  <title></title>
+</head>
+<body>
+  <div id="customBackground">
     <div id="header">
       <h1 id="title">Find Help!</h1>
       <!-- /.header -->
     </div>
-      <div class="output">
+    <div id="output">
+      <div class="showErrors"></div>
 
-        <!-- /.output -->
+      <!-- /.output -->
+    </div>
+    <div class="userForm">
+      <div class="container">
+        <form class="searchForm" action="index.html" method="post">
+          <div class="row">
+            <div class="col-lg-6 userInput">
+              <input class="form-control form-control-lg"  id="concern" name="" value="" placeholder="Medical Issue">
+              <!-- /#location -->
+            </div>
+            <div class="col-lg-6 userInput">
+              <input class="form-control form-control-lg"  id="gender" type="text" name="" value="" placeholder="Gender of Doctor (male or female)">
+            </div>
+
+            <!-- /.row -->
+          </div>
+        </div>
       </div>
-      <div class="userForm">
-            <div class="container">
-              <form class="searchForm" action="index.html" method="post">
-              <div class="row">
-                  <div class="col-lg-4 userInput">
-                    <input class="form-control form-control-lg"  id="location" name="" value="" placeholder="zipcode">
-                    <!-- /#location -->
-                  </div>
-                  <div class="col-lg-4 userInput">
-                    <input class="form-control form-control-lg"  id="distance" type="text" name="" value="" placeholder="distance in miles">
-                  </div>
-                  <div class="col-lg-4 userInput">
-                    <input class="form-control form-control-lg" id="issue" type="text" placeholder="Medical Issue">
-                  </div>
-                  <!-- /.row -->
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <button  id="search" type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
-              <!-- /.searchForm -->
-            </form>
-            </div>
-          </div>
+      <div class="container">
+        <div class="row">
+          <button  id="search" type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+          <!-- /.searchForm -->
+        </form>
+      </div>
+    </div>
     <!-- /#customBackground -->
   </div>
-  </body>
+</body>
 </html>
