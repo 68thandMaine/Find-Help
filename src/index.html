@@ -1,46 +1,84 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <title></title>
 </head>
+
 <body>
 
 
   <div class="container">
-      <div id="header">
-        <h1 id="title">Find Help!</h1>
-        <!-- /.header -->
-      </div>
-    </div>
-
-      <div class="container">
-          <div class="row">
-            <form class="searchForm" action="index.html" method="post">
-            <div class="col-lg-6 userInput">
-              <input class="form-control form-control-lg"  id="concern" name="" value="" placeholder="Medical Issue">
-            </div>
-            <div class="col-lg-6 userInput">
-              <input class="form-control form-control-lg"  id="gender" type="text" name="" value="" placeholder="Gender of Doctor (male or female)">
-            </div>
-
-            <!-- /.row -->
-          </div>
-          <!-- /.container -->
-      </div>
-
-      <div class="container">
+    <div id="header">
+      <h1 id="title">Find Help!</h1>
+      <form class="searchForm" action="index.html" method="post">
         <div class="row">
-          <button  id="search" type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
-          <!-- /.searchForm -->
-        </form>
-      </div>
+          <div class="col-lg-6">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="conditionList">Conditions</label>
+              </div>
+              <select class="custom-select" id="conditionSelection">
+            </div>
+            <div class="col-lg-6">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="sexList">Gender Preference</label>
+                </div>
+                <select class="custom-select" id="genderSelection">
+                  <option selected>Choose...</option>
+                  <optgroup value="male">male</option>
+                  <optgroup value="female">female</option>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg">
+              <button id="searchSubmit" type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+            </div>
+
+          </div>
+
+        </div>
+      </form>
     </div>
+  </div>
 
-      <div id="output">
-        <div class="showErrors"></div>
+  <!-- /.header -->
+  </div>
+  </div>
 
-        <!-- /.output -->
-      </div>
+  <div class="container">
+    <div class="row">
+      <form class="searchForm" action="index.html" method="post">
+        <div class="col-lg-6 userInput">
+          <input class="form-control form-control-lg" id="concern" name="" value="" placeholder="Medical Issue">
+        </div>
+        <div class="col-lg-6 userInput">
+          <input class="form-control form-control-lg" id="gender" type="text" name="" value="" placeholder="Gender of Doctor (male or female)">
+        </div>
+
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <button id="search" type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+      <!-- /.searchForm -->
+      </form>
+    </div>
+  </div>
+
+  <div id="output">
+    <div class="showErrors"></div>
+
+    <!-- /.output -->
+  </div>
 
 </body>
+
 </html>

@@ -40,9 +40,9 @@
     "webpack-dev-server": "^3.1.0"
   },
   "dependencies": {
-    "es6-promise": "^4.2.5",
     "bootstrap": "^4.2.1",
     "chosen": "0.0.2",
+    "es6-promise": "^4.2.5",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6"
   }
