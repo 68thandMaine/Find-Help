@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <link rel="stylesheet" href="./styles.css">
   <title></title>
 </head>
 <body>
-  <div id="customBackground">
-    <div id="header">
-      <h1 id="title">Find Help!</h1>
-      <!-- /.header -->
-    </div>
-    <div id="output">
-      <div class="showErrors"></div>
 
-      <!-- /.output -->
+
+  <div class="container">
+      <div id="header">
+        <h1 id="title">Find Help!</h1>
+        <!-- /.header -->
+      </div>
     </div>
-    <div class="userForm">
+
       <div class="container">
-        <form class="searchForm" action="index.html" method="post">
           <div class="row">
+            <form class="searchForm" action="index.html" method="post">
             <div class="col-lg-6 userInput">
               <input class="form-control form-control-lg"  id="concern" name="" value="" placeholder="Medical Issue">
-              <!-- /#location -->
             </div>
             <div class="col-lg-6 userInput">
               <input class="form-control form-control-lg"  id="gender" type="text" name="" value="" placeholder="Gender of Doctor (male or female)">
@@ -29,8 +25,9 @@
 
             <!-- /.row -->
           </div>
-        </div>
+          <!-- /.container -->
       </div>
+
       <div class="container">
         <div class="row">
           <button  id="search" type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
@@ -38,7 +35,12 @@
         </form>
       </div>
     </div>
-    <!-- /#customBackground -->
-  </div>
+
+      <div id="output">
+        <div class="showErrors"></div>
+
+        <!-- /.output -->
+      </div>
+
 </body>
 </html>
