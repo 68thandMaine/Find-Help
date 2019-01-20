@@ -3,7 +3,7 @@ class KnownConditions {
     this.listOfConditions = [];
   }
 
-condtions() {
+conditions() {
   const Promse = require('es6-promise').Promise;
   return new Promise(function(resolve, reject) {
     const request = new XMLHttpRequest();
