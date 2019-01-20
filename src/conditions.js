@@ -1,4 +1,7 @@
 class KnownConditions {
+  constructor() {
+    this.listOfConditions = [];
+  }
 
 condtions() {
   const Promse = require('es6-promise').Promise;
@@ -18,16 +21,15 @@ condtions() {
 }
 
 knownConditionsList(response) {
-  const knownConditionList = [];
-  const response = JSON.parse(response);
-  response.data.forEach((illness) => {
-    if(this.missingCondition(illness.name)) this.conditionsList.push(illness.name);
+  const parsedResponse = JSON.parse(response);
+  parsedResponse.data.forEach((illness) => {
+    if(this.missingFromList(illness.name)) this.listOfConditions.push(illness.name);
   });
-  return knownConditionList.sort();
+  this.listOfConditions.sort();
 }
 
-missingCondition(name) {
-  return (!this.)
+missingFromList(name) {
+  return (!this.listOfConditions.includes(name));
 }
 
 }
