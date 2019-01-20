@@ -1,9 +1,10 @@
 import { Doctors } from './doctors.js';
 import { KnownConditions } from './conditions.js';
 import { buildDoctorCards } from './ui-logic.js';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap';
 import $ from 'jquery';
 import './styles.css';
-import 'bootstrap';
 
 // ------ Condtion promise function -------//
 function getConditions() {
