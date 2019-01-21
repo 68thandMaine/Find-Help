@@ -29,6 +29,7 @@ module.exports = {
   ],
   module: {
     rules: [
+      // CSS loader
       {
         test: /\.css$/,
         use: [
@@ -54,10 +55,7 @@ module.exports = {
           presets: ['es2015']
         }
       },
-      {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader'
-      },
+      // File loader config
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
@@ -69,6 +67,17 @@ module.exports = {
             }
           }
         ],
+      },
+      // url loader
+      {
+          test: /\.(png|jp(e*)g|svg)$/,
+          use: [{
+              loader: 'url-loader',
+              options: {
+                  limit: 8000, // Convert images < 8kb to base64 strings
+                  name: 'images/[hash]-[name].[ext]'
+              }
+          }]
       }
     ]
     },
