@@ -21,7 +21,9 @@ h1 h2 h3 h4 h5 h6 {
    font-style: italic;
    text-align: center;
  }
-
+.card {
+  width: 18rem;
+}
 #customBackground {
   background-position: center center;
   background-repeat: no-repeat;
