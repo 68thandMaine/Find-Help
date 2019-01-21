@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Open+Sans');
 
-/* html {
-  background-color: #141214;
-} */
+@font-face {
+    font-family: 'simplificasimplifica';
+    src: url('./fonts/simplifica_typeface-webfont.woff2') format('woff2'),
+         url('./fonts/simplifica_typeface-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body {
+  background-color: #283138;
+}
 
 p {
   color: black;
-  /* color: #FFFFFF; */
+  color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-stretch: extra-expanded;
@@ -37,7 +45,10 @@ h1 h2 h3 h4 h5 h6 {
   width: 100%;
 }
  #title {
+   font-family: simplificasimplifica;
+   text-align: center;
    padding-top: 15px;
+   padding-bottom: 15px;
  }
 
 .card-body {

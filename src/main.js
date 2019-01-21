@@ -45,7 +45,7 @@ function resetDocSpecs(){
 }
 
 $(document).ready(function() {
-  getConditions();
+  // getConditions();
   const doctors = new Doctors();
 
   $('#searchSubmit').click(function() {
