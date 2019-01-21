@@ -10,7 +10,7 @@ import './styles.css';
 function getConditions() {
   const knownConditions = new KnownConditions();
   let conditionsPromise = knownConditions.conditions();
-console.log("conditionsPromise: " + conditionsPromise );
+  console.log("conditionsPromise: " + conditionsPromise );
   conditionsPromise.then((response) => {
     knownConditions.knownConditionsList(response);
     buildConditionOptions(knownConditions.listOfConditions);
@@ -33,20 +33,23 @@ function resetForm(){
 }
 
 function returnToForm(){
-  $("#output").on("click", "button", function(){
-    $('.showErrors').hide();
+  $(".showErrors").on("click", "button", function(){
+    $('.showErrors').empty();
     $('.searchForm').show();
     $('#searchSubmit').show();
-    document.getElementById("#searchForm").reset();
-});
+  });
+}
+
+function resetDocSpecs(){
+  $(".doctorInfo").empty();
 }
 
 $(document).ready(function() {
   getConditions();
   const doctors = new Doctors();
 
-  $('.searchForm').submit(function(event) {
-    event.preventDefault();
+  $('#searchSubmit').click(function() {
+    resetDocSpecs();
     let medicalIssue = $('#conditionSelection').val();
     let gender = $('#genderSelection').val();
     resetForm();
@@ -56,8 +59,8 @@ $(document).ready(function() {
       let body = JSON.parse(response);
       buildDoctorCards(body);
     }, function(error) {
-      $('.searchForm').hide();
-      $('#searchSubmit').hide();
+      $('.searchForm').toggle();
+      $('#searchSubmit').toggle();
       $('.showErrors').append( `${error.message}`);
       returnToForm();
     });
