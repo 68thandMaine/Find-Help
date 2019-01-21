@@ -32,29 +32,34 @@ function resetForm(){
   $('#genderSelection').val('');
 }
 
+function returnToForm(){
+  $("#output").on("click", "button", function(){
+    $('.showErrors').hide();
+    $('.searchForm').show();
+    $('#searchSubmit').show();
+    document.getElementById("#searchForm").reset();
+});
+}
+
 $(document).ready(function() {
   getConditions();
   const doctors = new Doctors();
 
   $('.searchForm').submit(function(event) {
     event.preventDefault();
-
     let medicalIssue = $('#conditionSelection').val();
     let gender = $('#genderSelection').val();
     resetForm();
-    if($("#conditionSelection").val() || $("#genderSelection").val() === ' ') {
-      return alert("Please select both a condition and a gender")
-    }
 
     let getListOfDoctorsPromise = doctors.getDoctors(medicalIssue, gender);
     getListOfDoctorsPromise.then(function(response) {
       let body = JSON.parse(response);
       buildDoctorCards(body);
     }, function(error) {
-      $('.showErrors').text(`There was an error processing your requst: ${error.message}`);
+      $('.searchForm').hide();
+      $('#searchSubmit').hide();
+      $('.showErrors').append( `${error.message}`);
+      returnToForm();
     });
-
-
-
   });
 });
