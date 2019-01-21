@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Open+Sans');
+@font-face {
+    font-family: 'denseregular';
+    src: url('./fonts/dense-webfont.woff2') format('woff2'),
+         url('./fonts/dense-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
 @font-face {
     font-family: 'simplificasimplifica';
     src: url('./fonts/simplifica_typeface-webfont.woff2') format('woff2'),
          url('./fonts/simplifica_typeface-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
+
 body {
   background-color: #283138;
 }
@@ -22,15 +29,14 @@ p {
 }
 
 h1 h2 h3 h4 h5 h6 {
-   color: rgb(260, 245, 243);
-   font-family: 'Major Mono Display', monospace;
-   font-size: 70px;
+   font-family: dense;
    font-stretch: expanded;
    font-style: italic;
    text-align: center;
  }
-.card {
-  width: 18rem;
+#userInputError {
+  background-color: #112330;
+  align-items: center;
 }
 #customBackground {
   background-position: center center;
@@ -73,12 +79,9 @@ h1 h2 h3 h4 h5 h6 {
 
 .card-body {
   border-style: solid;
+  border-radius: 15px;
 }
 
-.leftPane {
-
-}
-
-#output {
-  overflow: scroll;
+#output{
+  align-items: center;
 }
