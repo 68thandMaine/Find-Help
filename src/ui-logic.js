@@ -12,5 +12,5 @@ export function buildDoctorCards(body) {
     </div>`;
 
   }
-  $('#output').append(doctorList);
+  $('.doctorInfo').append(doctorList);
 }
