@@ -45,11 +45,31 @@ h1 h2 h3 h4 h5 h6 {
   width: 100%;
 }
  #title {
+   font-size: 90px;
    font-family: simplificasimplifica;
    text-align: center;
    padding-top: 15px;
    padding-bottom: 15px;
+   color: #FFFEFD;
+   font-weight: lighter;
  }
+
+.mb-3 {
+  align-items: center;
+  padding: 5px;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 5px;
+  border-color: #84faff;
+  background-color: #6C757D;
+}
+
+#searchSubmit {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 15px;
+  border-color: #aaffbf;
+}
 
 .card-body {
   border-style: solid;
