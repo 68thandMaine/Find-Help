@@ -1,6 +1,5 @@
 class Doctors {
 
-  
   getDoctors(issue, gender) {
     const Promse = require('es6-promise').Promise;
     return new Promise(function(resolve, reject) {
@@ -11,14 +10,21 @@ class Doctors {
         if(this.status === 200) {
           resolve(request.response);
         } else {
-          reject(Error(request.statusText));
+          reject(Error(`<div class="card">
+          <div class="card-body">
+          <h5 class="card-title">Uh Oh!</h5>
+          <h6 class="card-subtitle mb-2 text-muted">We don't quite understand what you're searching for.</h6>
+          <p class="card-text">Please make sure all form fields have an option selected and try again!</p>
+          <p class="card-text mb-2 text-muted">The error you encountered was due to a ${request.statusText}</p>
+          <button type="button" class="btn btn-secondary" id="backToSearch">Back to Search</button>
+          </div>
+          </div>`));
         }
       }
       request.open("GET", url, true);
       request.send();
     });
   }
-
 
 
 
