@@ -6,11 +6,11 @@ import 'bootstrap';
 import $ from 'jquery';
 import './styles.css';
 
+
 // ------ Condtion promise function -------//
 function getConditions() {
   const knownConditions = new KnownConditions();
   let conditionsPromise = knownConditions.conditions();
-  console.log("conditionsPromise: " + conditionsPromise );
   conditionsPromise.then((response) => {
     knownConditions.knownConditionsList(response);
     buildConditionOptions(knownConditions.listOfConditions);
@@ -43,26 +43,37 @@ function returnToForm(){
 function resetDocSpecs(){
   $(".doctorInfo").empty();
 }
+// ----- Doctor promise functions------//
+
+function listOfDoctors(medicalIssue, gender) {
+  const doctors = new Doctors();
+  let getListOfDoctorsPromise = doctors.getDoctors(medicalIssue, gender);
+  getListOfDoctorsPromise.then((response) => {
+    // const doctorList = doctors.buildSearchInput(response);
+
+    const body = JSON.parse(response);
+    buildDoctorCards(body);
+
+  }, function(error) {
+    $('.searchForm').toggle();
+    $('#searchSubmit').toggle();
+    $('.showErrors').append( `${error.message}`);
+    returnToForm();
+  });
+}
+// -------/doctor promise -------//
 
 $(document).ready(function() {
-  // getConditions();
-  const doctors = new Doctors();
+  getConditions();
+
 
   $('#searchSubmit').click(function() {
     resetDocSpecs();
     let medicalIssue = $('#conditionSelection').val();
+    console.log(medicalIssue);
     let gender = $('#genderSelection').val();
     resetForm();
+    listOfDoctors(medicalIssue, gender);
 
-    let getListOfDoctorsPromise = doctors.getDoctors(medicalIssue, gender);
-    getListOfDoctorsPromise.then(function(response) {
-      let body = JSON.parse(response);
-      buildDoctorCards(body);
-    }, function(error) {
-      $('.searchForm').toggle();
-      $('#searchSubmit').toggle();
-      $('.showErrors').append( `${error.message}`);
-      returnToForm();
-    });
   });
 });
