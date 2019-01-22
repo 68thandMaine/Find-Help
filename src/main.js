@@ -50,10 +50,11 @@ function listOfDoctors(medicalIssue, gender) {
   let getListOfDoctorsPromise = doctors.getDoctors(medicalIssue, gender);
   getListOfDoctorsPromise.then((response) => {
     // const doctorList = doctors.buildSearchInput(response);
-
     const body = JSON.parse(response);
+    $('.searchForm').toggle();
+    $('#searchSubmit').toggle();
     buildDoctorCards(body);
-
+    returnToForm();
   }, function(error) {
     $('.searchForm').toggle();
     $('#searchSubmit').toggle();
