@@ -6,8 +6,8 @@ import $ from 'jquery';
 export function buildDoctorCards(body) {
   if(body.data.length <= 0) {
     let noMatchCard = ""
-    noMatchCard += `<div class="card">
-    <div class="card-body" id="noResultsMatch">
+    noMatchCard += `<div class="card" id="noResultsMatch">
+    <div class="card-body">
     <h5 class="card-title">Uh Oh!</h5>
     <h6 class="card-subtitle mb-2 text-muted">We weren't able to find a match.</h6>
     <p class="card-text">Please try again.</p>
