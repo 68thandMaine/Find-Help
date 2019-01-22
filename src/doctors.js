@@ -1,5 +1,11 @@
 class Doctors {
 
+constructor(firstName, lastName, id) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.id = id;
+}
+
   getDoctors(issue, gender) {
     const Promse = require('es6-promise').Promise;
     return new Promise(function(resolve, reject) {
@@ -26,6 +32,17 @@ class Doctors {
     });
   }
 
+  // buildSearchInput(response) {
+  //   const listOfDoctorNames = [];
+  //   const parsedResponse = JSON.parse(response);
+  //   parsedResponse.data.forEach((doctor) => {
+  //     if (doctor.profile !== undefined) {
+  //       let doctor = new Doctors (doctor.profile.first_name, doctor.profile.last_name, doctor.uid)
+  //       listOfDoctorNames.push(doctor);
+  //     }
+  //   });
+  //   return listOfDoctorNames
+  // }
 
 
 }
