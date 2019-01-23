@@ -77,6 +77,11 @@ h1 h2 h3 h4 h5 h6 {
   border-color: #aaffbf;
 }
 
+#searchByName {
+  width: 18rem;
+  height: 2.35rem;
+}
+
 .card-body {
   border-style: solid;
   border-radius: 15px;
