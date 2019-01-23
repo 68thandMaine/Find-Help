@@ -1,6 +1,6 @@
 import { Doctors } from './doctors.js';
 import { KnownConditions } from './conditions.js';
-import { buildDoctorCards, onStart, resetDocSpecs, resetForm, returnToForm } from './ui-logic.js';
+import { buildDoctorCards, onStart, resetDocSpecs, resetForm, returnToForm, goBack } from './ui-logic.js';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap';
 import $ from 'jquery';
@@ -56,11 +56,13 @@ $(document).ready(function() {
 
   $('#searchSubmit').click(function() {
     resetDocSpecs();
+    $('#back').toggle();
     let medicalIssue = $('#conditionSelection').val();
     let name = $('#searchByName').val();
     resetForm();
     listOfDoctors(medicalIssue, name);
   });
 
+  goBack()
 
 });
