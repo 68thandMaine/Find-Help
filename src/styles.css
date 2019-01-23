@@ -78,6 +78,14 @@ h1 h2 h3 h4 h5 h6 {
   border-color: #aaffbf;
 }
 
+#back {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 15px;
+  border-color: #aaffbf;
+  margin-bottom: 15px;
+}
+
 #searchByName {
   width: 18rem;
   height: 2.35rem;
@@ -96,15 +104,17 @@ h1 h2 h3 h4 h5 h6 {
   width: 18rem;
   height: 25rem;
   overflow: scroll;
+  border-style: solid;
+  border-color: #FFFEFD;
+  border-width: thick;
   border-radius: 15px;
 }
 
 #doctorCard {
-  margin-top: 5px;
+  margin-top: 10px;
   border-radius: 15px;
   border-style: solid;
   border-color: #84faff;
-
 }
 
 #drName {
@@ -113,8 +123,7 @@ h1 h2 h3 h4 h5 h6 {
   background-color: #5A6268;
   text-align: center;
   font-family: denseregular;
-  font-size: 16;
-  font-weight: lighter;
+  font-size: 55px;
 }
 
 #showErrors {
