@@ -32,17 +32,18 @@ constructor(firstName, lastName, id) {
     });
   }
 
-  // buildSearchInput(response) {
-  //   const listOfDoctorNames = [];
-  //   const parsedResponse = JSON.parse(response);
-  //   parsedResponse.data.forEach((doctor) => {
-  //     if (doctor.profile !== undefined) {
-  //       let doctor = new Doctors (doctor.profile.first_name, doctor.profile.last_name, doctor.uid)
-  //       listOfDoctorNames.push(doctor);
-  //     }
-  //   });
-  //   return listOfDoctorNames
-  // }
+  buildSearchInput(response) {
+    const listOfDoctorNames = [];
+    const parsedResponse = JSON.parse(response);
+    console.log(parsedResponse);
+    parsedResponse.data.forEach((doctors) => {
+      if (doctors.profile !== undefined) {
+        let doctor = new Doctors (doctors.profile.first_name, doctors.profile.last_name, doctors.npi)
+        listOfDoctorNames.push(doctor);
+      }
+    });
+    return listOfDoctorNames
+  }
 
 
 }
