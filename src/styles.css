@@ -1,12 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Open+Sans');
+@font-face {
+    font-family: 'denseregular';
+    src: url('./fonts/dense-webfont.woff2') format('woff2'),
+         url('./fonts/dense-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-/* html {
-  background-color: #141214;
-} */
+}
+@font-face {
+    font-family: 'simplificasimplifica';
+    src: url('./fonts/simplifica_typeface-webfont.woff2') format('woff2'),
+         url('./fonts/simplifica_typeface-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  background-color: #283138;
+}
 
 p {
   color: black;
-  /* color: #FFFFFF; */
+  color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-stretch: extra-expanded;
@@ -14,14 +29,16 @@ p {
 }
 
 h1 h2 h3 h4 h5 h6 {
-   color: rgb(260, 245, 243);
-   font-family: 'Major Mono Display', monospace;
-   font-size: 70px;
+   font-family: dense;
    font-stretch: expanded;
    font-style: italic;
    text-align: center;
+   color: #FFFEFD;
  }
-
+#userInputError {
+  background-color: #112330;
+  align-items: center;
+}
 #customBackground {
   background-position: center center;
   background-repeat: no-repeat;
@@ -35,17 +52,83 @@ h1 h2 h3 h4 h5 h6 {
   width: 100%;
 }
  #title {
+   font-size: 90px;
+   font-family: simplificasimplifica;
+   text-align: center;
    padding-top: 15px;
+   padding-bottom: 15px;
+   color: #FFFEFD;
+   font-weight: lighter;
  }
+
+.mb-3 {
+  align-items: center;
+  padding: 5px;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 5px;
+  border-color: #84faff;
+  background-color: #6C757D;
+}
+
+#searchSubmit {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 15px;
+  border-color: #aaffbf;
+}
+
+#back {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 15px;
+  border-color: #aaffbf;
+  margin-bottom: 15px;
+}
+
+#searchByName {
+  width: 18rem;
+  height: 2.35rem;
+}
 
 .card-body {
   border-style: solid;
+  border-radius: 15px;
 }
 
-.leftPane {
 
-}
 
-#output {
+#doctorInfo {
+  margin-top: 15px;
+  background-color: #5a6268;
+  width: 18rem;
+  height: 25rem;
   overflow: scroll;
+  border-style: solid;
+  border-color: #FFFEFD;
+  border-width: thick;
+  border-radius: 15px;
+}
+
+#doctorCard {
+  margin-top: 10px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #84faff;
+}
+
+#drName {
+  color: #FFFEFD;
+  border: solid;
+  background-color: #5A6268;
+  text-align: center;
+  font-family: denseregular;
+  font-size: 55px;
+}
+
+#showErrors {
+  width: 18rem;
+  align-items: center;
+  margin-left: 5%;
+  position: relative;
 }
