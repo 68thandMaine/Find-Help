@@ -54,8 +54,6 @@ function listOfDoctors(medicalIssue, gender) {
     const body = JSON.parse(response);
     $('.searchForm').toggle();
     $('#searchSubmit').toggle();
-    $('#searchMenu').toggle();
-    // autocompleteField(name, doctorList);
     buildDoctorCards(body);
     returnToForm();
   }, function(error) {
@@ -77,11 +75,15 @@ $(document).ready(function() {
   $('#searchSubmit').click(function() {
     resetDocSpecs();
     let medicalIssue = $('#conditionSelection').val();
-    console.log(medicalIssue);
-    let gender = $('#genderSelection').val();
+    let name = $('#searchByName').val();
     resetForm();
-    listOfDoctors(medicalIssue, gender);
+    listOfDoctors(medicalIssue, name);
   });
+
+  $('#nameSearchSubmit').click(function() {
+    let name = $("#textSearchInput").val();
+    console.log(name);
+  })
 
 
 });
