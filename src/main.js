@@ -33,40 +33,46 @@ function resetForm(){
 }
 
 function returnToForm(){
-  $(".showErrors").on("click", "button", function(){
-    $('.showErrors').empty();
+  $("#showErrors").on("click", "button", function(){
+    $('#showErrors').empty();
     $('.searchForm').show();
     $('#searchSubmit').show();
   });
 }
 
 function resetDocSpecs(){
-  $(".doctorInfo").empty();
+  $("#doctorInfo").empty();
 }
 // ----- Doctor promise functions------//
 
 function listOfDoctors(medicalIssue, gender) {
+  let name = $('#textSearchInput').val()
   const doctors = new Doctors();
   let getListOfDoctorsPromise = doctors.getDoctors(medicalIssue, gender);
   getListOfDoctorsPromise.then((response) => {
-    // const doctorList = doctors.buildSearchInput(response);
+    const doctorList = doctors.buildSearchInput(response);
     const body = JSON.parse(response);
     $('.searchForm').toggle();
     $('#searchSubmit').toggle();
+    $('#searchMenu').toggle();
+    // autocompleteField(name, doctorList);
     buildDoctorCards(body);
     returnToForm();
   }, function(error) {
     $('.searchForm').toggle();
     $('#searchSubmit').toggle();
-    $('.showErrors').append( `${error.message}`);
+    $('#showErrors').append( `${error.message}`);
     returnToForm();
   });
 }
+
+
+
 // -------/doctor promise -------//
 
 $(document).ready(function() {
   getConditions();
-
+  $("#searchMenu").hide();
 
   $('#searchSubmit').click(function() {
     resetDocSpecs();
@@ -75,6 +81,7 @@ $(document).ready(function() {
     let gender = $('#genderSelection').val();
     resetForm();
     listOfDoctors(medicalIssue, gender);
-
   });
+
+
 });
