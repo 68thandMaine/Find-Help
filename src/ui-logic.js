@@ -1,7 +1,10 @@
 import $ from 'jquery';
 
 
-
+// export function autocompleteField(name, arr) {
+//   let b, i, val = this.name;
+//   if(!name)
+// }
 
 export function buildDoctorCards(body) {
   if(body.data.length <= 0) {
@@ -14,7 +17,7 @@ export function buildDoctorCards(body) {
     <button type="button" class="btn btn-secondary" id="backToSearch">Back to Search</button>
     </div>
     </div>`
-    $(".showErrors").append(noMatchCard);
+    $("#showErrors").append(noMatchCard);
   }
   else if (body.data.length > 0) {
     let doctorCards = "";
@@ -24,6 +27,6 @@ export function buildDoctorCards(body) {
       <p>At this time Dr. ${body.data[i].profile.last_name} is accepting patients: ${body.data[i].practices[0].accepts_new_patients}.</p><br><p>Visit Dr. ${body.data[i].profile.last_name}'s website at ${body.data[i].practices[0].website}'
       </div>`;
     }
-    $('.doctorInfo').append(doctorCards);
+    $('#doctorInfo').append(doctorCards);
   }
 }
