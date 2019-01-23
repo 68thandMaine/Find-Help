@@ -11,6 +11,16 @@ export function resetForm(){
   $('#genderSelection').val('');
 }
 
+export function goBack() {
+  $('#back').on('click', function() {
+    $("#doctorInfo").hide();
+    $("#doctorInfo").empty();
+    $('.searchForm').toggle();
+    $("#searchSubmit").toggle();
+    $("#back").toggle();
+  })
+}
+
 export function returnToForm(){
   $("#showErrors").on("click", "button", function(){
     $('#showErrors').empty();
@@ -27,6 +37,7 @@ export function resetDocSpecs() {
 export function onStart() {
   $("#doctorInfo").hide();
   $("#searchMenu").hide();
+  $("#back").hide();
 }
 
 export function buildDoctorCards(body) {
