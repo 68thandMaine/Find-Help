@@ -33,6 +33,7 @@ h1 h2 h3 h4 h5 h6 {
    font-stretch: expanded;
    font-style: italic;
    text-align: center;
+   color: #FFFEFD;
  }
 #userInputError {
   background-color: #112330;
@@ -90,7 +91,30 @@ h1 h2 h3 h4 h5 h6 {
 
 
 #doctorInfo {
+  margin-top: 15px;
+  background-color: #5a6268;
   width: 18rem;
+  height: 25rem;
+  overflow: scroll;
+  border-radius: 15px;
+}
+
+#doctorCard {
+  margin-top: 5px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #84faff;
+
+}
+
+#drName {
+  color: #FFFEFD;
+  border: solid;
+  background-color: #5A6268;
+  text-align: center;
+  font-family: denseregular;
+  font-size: 16;
+  font-weight: lighter;
 }
 
 #showErrors {

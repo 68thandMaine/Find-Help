@@ -1,6 +1,6 @@
 import { Doctors } from './doctors.js';
 import { KnownConditions } from './conditions.js';
-import { buildDoctorCards } from './ui-logic.js';
+import { buildDoctorCards, onStart, resetDocSpecs, resetForm, returnToForm } from './ui-logic.js';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap';
 import $ from 'jquery';
@@ -25,24 +25,7 @@ function buildConditionOptions(illnesses) {
 
 // ----- /condition building ------//
 
-// ----- page functions -------//
 
-function resetForm(){
-  $('#conditionSelection').val('');
-  $('#genderSelection').val('');
-}
-
-function returnToForm(){
-  $("#showErrors").on("click", "button", function(){
-    $('#showErrors').empty();
-    $('.searchForm').show();
-    $('#searchSubmit').show();
-  });
-}
-
-function resetDocSpecs(){
-  $("#doctorInfo").empty();
-}
 // ----- Doctor promise functions------//
 
 function listOfDoctors(medicalIssue, gender) {
@@ -51,6 +34,7 @@ function listOfDoctors(medicalIssue, gender) {
   let getListOfDoctorsPromise = doctors.getDoctors(medicalIssue, gender);
   getListOfDoctorsPromise.then((response) => {
     const doctorList = doctors.buildSearchInput(response);
+    console.log(doctorList);
     const body = JSON.parse(response);
     $('.searchForm').toggle();
     $('#searchSubmit').toggle();
@@ -64,13 +48,11 @@ function listOfDoctors(medicalIssue, gender) {
   });
 }
 
-
-
 // -------/doctor promise -------//
 
 $(document).ready(function() {
+  onStart();
   getConditions();
-  $("#searchMenu").hide();
 
   $('#searchSubmit').click(function() {
     resetDocSpecs();
@@ -79,11 +61,6 @@ $(document).ready(function() {
     resetForm();
     listOfDoctors(medicalIssue, name);
   });
-
-  $('#nameSearchSubmit').click(function() {
-    let name = $("#textSearchInput").val();
-    console.log(name);
-  })
 
 
 });
