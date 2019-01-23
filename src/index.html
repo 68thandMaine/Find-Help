@@ -49,15 +49,23 @@
   </div>
 <!-- /form -->
 
+
+
 <div class="container">
-  <div  id="output">
-    <div class="doctorInfo"></div>
-    <div class="showErrors"></div>
-
+  <div class="col" id="showErrors"></div>
+  <div  class ="row" id="output">
+    <div class= "col-lg-6" id="doctorInfo"></div>
+    <div class="col-lg-6" id="searchMenu">
+      <form autocomplete="off" >
+        <div class="autocomplete" style="width:300px;">
+      <input type="text" id="textSearchInput" list="textSearch">
+      <datalist id="textSearch"></datalist>
+      <br>
     </div>
-
-    <!-- /.output -->
+    </form>
+    </div>
   </div>
+    <!-- /.output -->
   <!-- /.container -->
 </div>
 
