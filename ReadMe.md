@@ -1,4 +1,3 @@
-# Find Help
 # Find Help!
 <sup>**Designed By:** _Chris Rudnicky_</sup>  
 <sup>_January 18, 2019_</sup>
@@ -17,7 +16,8 @@
 ---
 ## Description
 
-
+This is an applicaion that was built to practice making API calls.
+A user will be able to find a list of doctors based off of a condition (conditions retrieved from an API call), or they can search the BetterDoctor database for a doctor based off of their name.
 ---
 
 ## Installation instructions
@@ -40,6 +40,7 @@ Testing for this project was not required as per Epicouds project guidelines.
 ---
 ## Known or Potential Errors
 
+At this time the UI is not as intuitive as I would like. I will eventually find the time to enahnce the UI experience. I also need to continue to build the look of the divs and handle lagging animations.
 
 ---
 ## Technologies Used
